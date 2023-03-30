@@ -1,0 +1,29 @@
+C - Consultar Status - Recuperacao de Credito
+    Entrada: cdcooper,nrdconta,nriniseq,nrregist,dtini,dtfim,stop
+    Retorna: Coop,Conta,Nome,Contrato,Valor,Data de Contratacao,Status,Critica,Descricao Critica
+
+    Retorna todos os dados encontrados para o filtro com lógica de paginacao realizada no banco de dados ou backend
+
+    Desafios: Consumir pelo menos 3 tabelas do banco de dados para montar as informacoes de consulta
+
+L - Liberacao/Liquidacao da Operacao
+    *- Recebe um json do frontend, dentro desse json tera um array de objetos, esses objetos terao apenas uma propriedade chamada idcontrato
+    *- ao receber esse json precisa varrer todo o json e liquidar ou liberar os contratos contidos no JSON
+
+    Desafios: Ler um JSON do frontend, tratativa de erro funcional para qualquer caso
+
+A - Consultar Receita Federal
+    *- Recebe Conta e CNPJ, com essas informacoes busca o CPF do titular da conta e comunica com a API ObterAutorizacoes, com as informacoes da ObterAutorizacoes realiza a 
+    *- consultaFaturamento e com o retorno dessa API insere em uma tabela de log e mostra as informacoes em tela
+
+    Desafios: criar outro projeto para a API de ObterAutorizacoes e consultaFaturamento
+
+3 Classes iniciais:
+    Status
+    Operacao
+    ReceitaFederal
+
+3 Controllers Iniciass
+    StatusController
+    OperacaoController
+    ReceitaFederalController
